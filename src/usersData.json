@@ -1,0 +1,32 @@
+[
+  {
+    "userId": "710be743-d5f2-4bc0-95bb-7451687ac560",
+    "username": "new entry@newsagg.com",
+    "password": "$2b$04$vh1jqNGd.N.en26LQ0a86uloBTtP6n6f2cl19QHZoU8cy5bDEnM5a",
+    "preferences": [],
+    "read": [],
+    "favorites": [],
+    "newsArticlesCacheDate": "2023-07-03T18:31:52.366Z"
+  },
+  {
+    "userId": "197b5c14-0794-4e81-954f-6a206f37fdc7",
+    "username": "katiyarkartik0@newsagg.com",
+    "password": "$2b$04$sXvmWhVyYBh8V5r7/ERXkueAibMr5pPLAl8rXiKLKAjMS73A.CVim",
+    "preferences": ["health"],
+    "read": [],
+    "favorites": [
+      {
+        "source": { "id": null, "name": "News9live.com" },
+        "author": null,
+        "title": "Over 25% people suffer central obesity and hypertension in Telangana: Lancet study - News9 LIVE",
+        "description": "The study also revealed that the prevalence of diabetes is high in the southern and northern regions of India. The numbers are alarming because this is due to the sedentary lifestyle people are living currently.",
+        "url": "https://www.news9live.com/health/health-conditions/over-25-people-suffer-central-obesity-and-hypertension-in-telangana-lancet-study-2198993",
+        "urlToImage": "https://images.news9live.com/wp-content/uploads/2023/07/woman-feet-standing-weight-scale-wooden-background-1-1.jpg",
+        "publishedAt": "2023-07-03T04:34:23Z",
+        "content": "The study also revealed that the prevalence of diabetes is high in the southern and northern regions of India. The numbers are alarming because this is due to the sedentary lifestyle people are livin… [+2988 chars]",
+        "uniqueId": "-y6orv6"
+      }
+    ],
+    "newsArticlesCacheDate": "2023-07-08T18:28:16.528Z"
+  }
+]
