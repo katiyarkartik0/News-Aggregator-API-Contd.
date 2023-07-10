@@ -13,7 +13,19 @@
     "username": "katiyarkartik0@newsagg.com",
     "password": "$2b$04$sXvmWhVyYBh8V5r7/ERXkueAibMr5pPLAl8rXiKLKAjMS73A.CVim",
     "preferences": ["health"],
-    "read": [],
+    "read": [
+      {
+        "source": { "id": null, "name": "Traffic.org" },
+        "author": null,
+        "title": "Current Zoonotic Diseases Challenges In The East Africa Region - Wildlife Trade News from TRAFFIC - TRAFFIC - Wildlife Trade News",
+        "description": "East Africa, with an abundance of free-ranging wild animals, livestock transhumance, and interactions between animals and humans at various interfaces, ...",
+        "url": "https://www.traffic.org/news/current-zoonotic-diseases-challenges-east-africa/",
+        "urlToImage": "https://www.traffic.org/site/assets/files/22209/istock-123380662.-767w.jpg",
+        "publishedAt": "2023-07-07T15:47:19Z",
+        "content": "Zoonotic diseases are infectious diseases that are naturally transmitted between animals and humans.   As these pathogens move between wildlife, domestic animals, and humans, understanding the specif… [+10928 chars]",
+        "uniqueId": "2hj459"
+      }
+    ],
     "favorites": [
       {
         "source": { "id": null, "name": "News9live.com" },
@@ -25,8 +37,19 @@
         "publishedAt": "2023-07-03T04:34:23Z",
         "content": "The study also revealed that the prevalence of diabetes is high in the southern and northern regions of India. The numbers are alarming because this is due to the sedentary lifestyle people are livin… [+2988 chars]",
         "uniqueId": "-y6orv6"
+      },
+      {
+        "source": { "id": "the-times-of-india", "name": "The Times of India" },
+        "author": "Durgesh Nandan Jha",
+        "title": "In India, prisoners 5 times more at risk of developing TB: Study - Indiatimes.com",
+        "description": "Science News: NEW DELHI: Prisoners in India are five times more at risk of developing tuberculosis (TB) than the general population, a first-of-its-kind study to as.",
+        "url": "https://timesofindia.indiatimes.com/home/science/in-india-prisoners-5-times-more-at-risk-of-developing-tb-study/articleshow/101619147.cms",
+        "urlToImage": "https://static.toiimg.com/thumb/msid-101619158,width-1070,height-580,imgsize-7376,resizemode-75,overlay-toi_sw,pt-32,y_pad-40/photo.jpg",
+        "publishedAt": "2023-07-09T18:50:00Z",
+        "content": "<ul><li>News</li>\r\n<li>Science News</li>\r\n<li>In India, prisoners 5 times more at risk of developing TB: Study</li></ul>\r\nFOLLOW US ON SOCIAL MEDIA",
+        "uniqueId": "-llkyyh"
       }
     ],
-    "newsArticlesCacheDate": "2023-07-08T18:28:16.528Z"
+    "newsArticlesCacheDate": "2023-07-10T19:40:16.487Z"
   }
 ]

@@ -24,7 +24,6 @@ const updatePreference = (req, res) => {
   }
 
   const userId = req.id;
-  console.log(userId);
 
   const { preferences: incomingPreferences } = req.body;
   const validator = new Validator();

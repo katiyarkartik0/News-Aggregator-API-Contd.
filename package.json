@@ -8,6 +8,7 @@
     "express": "^4.17.1",
     "jsonwebtoken": "^9.0.0",
     "nodemon": "^2.0.22",
+    "nyc": "^15.1.0",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
@@ -15,7 +16,9 @@
     "mocha": "^10.2.0"
   },
   "scripts": {
-    "test": "mocha 'test/**/*.js' --exit --timeout 7000"
+    "test": "mocha 'test/**/*.js' --exit --timeout 7000",
+    "test-specific":"mocha --exit --timeout 7000",
+    "test-coverage" :"nyc mocha 'test/**/*.js' --exit --timeout 7000",
+    "test-report":"nyc report --reporter=html"
   }
-  
 }

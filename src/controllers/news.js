@@ -18,7 +18,7 @@ const getNews = (req, res) => {
   const userId = req.id;
   const { newsListBasedOnPreference, error, msg } =
     getNewsListBasedOnPreference(userId);
-  
+
   if (error) {
     return res.status(500).send(msg);
   }
@@ -32,7 +32,6 @@ const addToRead = (req, res) => {
 
   const userId = req.id;
   const { id: newsId } = req.params;
-
   const { newsListBasedOnPreference, error, msg } =
     getNewsListBasedOnPreference(userId);
   if (error) {
@@ -62,11 +61,14 @@ const addToRead = (req, res) => {
     }
     return user;
   });
-  const writePath = path.join(__dirname, "..", "usersData.json");
-  fs.writeFileSync(writePath, JSON.stringify(updatedUserData), {
-    encoding: "utf-8",
-    flag: "w",
-  });
+  if (process.env.NODE_ENV != "test") {
+    const writePath = path.join(__dirname, "..", "usersData.json");
+    fs.writeFileSync(writePath, JSON.stringify(updatedUserData), {
+      encoding: "utf-8",
+      flag: "w",
+    });
+  }
+
   return res.status(200).send("News Article added to read successfully!");
 };
 
@@ -108,11 +110,13 @@ const addToFavorites = (req, res) => {
     }
     return user;
   });
-  const writePath = path.join(__dirname, "..", "usersData.json");
-  fs.writeFileSync(writePath, JSON.stringify(updatedUserData), {
-    encoding: "utf-8",
-    flag: "w",
-  });
+  if (process.env.NODE_ENV != "test") {
+    const writePath = path.join(__dirname, "..", "usersData.json");
+    fs.writeFileSync(writePath, JSON.stringify(updatedUserData), {
+      encoding: "utf-8",
+      flag: "w",
+    });
+  }
   return res.status(200).send("News Article added to favorites successfully!");
 };
 
@@ -153,23 +157,26 @@ const getFavoriteNews = (req, res) => {
   return res.status(200).send(favoritesNewsList);
 };
 
-const getNewsByKeyword = (req,res)=>{
-  const {keyword} = req.params;
+const getNewsByKeyword = (req, res) => {
+  const { keyword } = req.params;
   if (req.verified == false) {
     return res.status(403).send(req.msg);
   }
 
-  let newsArticles=[];
-  for(let i = 0; i<newsData.length;i++){
+  let newsArticles = [];
+  for (let i = 0; i < newsData.length; i++) {
     const individualCategoryNewsCollection = newsData[i].data;
-    for(let j = 0; j<individualCategoryNewsCollection.length;j++){
-      if(individualCategoryNewsCollection[j].content && individualCategoryNewsCollection[j].content.includes(keyword)==true){
-        newsArticles = [...newsArticles,individualCategoryNewsCollection[j]]
+    for (let j = 0; j < individualCategoryNewsCollection.length; j++) {
+      if (
+        individualCategoryNewsCollection[j].content &&
+        individualCategoryNewsCollection[j].content.includes(keyword) == true
+      ) {
+        newsArticles = [...newsArticles, individualCategoryNewsCollection[j]];
       }
     }
   }
   return res.status(200).send(newsArticles);
-}
+};
 
 module.exports = {
   getNews,
@@ -177,5 +184,5 @@ module.exports = {
   addToFavorites,
   getReadNews,
   getFavoriteNews,
-  getNewsByKeyword
+  getNewsByKeyword,
 };

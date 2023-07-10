@@ -1,3 +1,4 @@
+process.env.NODE_ENV = "test";
 const expect = require("chai").expect;
 const preferencesConstrains = require("../src/helpers/constants");
 const { Validator } = require("../src/helpers/validator");

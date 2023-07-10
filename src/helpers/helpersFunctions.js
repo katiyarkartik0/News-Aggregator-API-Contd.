@@ -42,7 +42,6 @@ const getNewsListBasedOnPreference = (userId) => {
     }
     return false;
   });
-  // console.log(newsListBasedOnPreference,"helperFunction.js")
   return {
     newsListBasedOnPreference,
     error: false,

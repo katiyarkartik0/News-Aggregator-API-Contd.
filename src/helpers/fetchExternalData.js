@@ -71,16 +71,13 @@ const fetchNews = async (userId) => {
     });
 
     user.newsArticlesCacheDate = new Date();
-    console.log(userId);
 
-    console.log(user);
     const updatedUserData = usersData.map((currUser) => {
       if (currUser.userId == userId) {
         return user;
       }
       return currUser;
     });
-    console.log(usersData);
     const writePathUsers = path.join(__dirname, "..", "usersData.json");
     fs.writeFileSync(writePathUsers, JSON.stringify(updatedUserData), {
       encoding: "utf-8",
