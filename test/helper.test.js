@@ -5,6 +5,8 @@ const {
   getUserByUserId,
 } = require("../src/helpers/helpersFunctions");
 
+const { generateUniqueCode } = require("../src/helpers/fetchExternalData");
+
 const preferences = (userId) => {
   const { user, error, msg } = getUserByUserId(userId);
   if (error) {
@@ -45,7 +47,9 @@ describe("Get preference list of user by getPreferenceListOfUser() function", ()
     }
   });
   it("should return preferences of user with userId 710be743-d5f2-4bc0-95bb-7451687ac560", () => {
-    const { preferencesList, error } = getPreferencesListOfUser("710be743-d5f2-4bc0-95bb-7451687ac560");
+    const { preferencesList, error } = getPreferencesListOfUser(
+      "710be743-d5f2-4bc0-95bb-7451687ac560"
+    );
     const {
       preferencesList: testPreferenceList,
       error: testPreferenceListError,
@@ -55,5 +59,21 @@ describe("Get preference list of user by getPreferenceListOfUser() function", ()
     } else {
       expect(preferencesList).to.have.members(testPreferenceList);
     }
+  });
+});
+
+describe("Testing generateUniqueCode()", () => {
+  it("Providing same strings should give same hashCodes", (done) => {
+    const hashCode1 = generateUniqueCode("SampleString1");
+    const hashCode2 = generateUniqueCode("SampleString1");
+    expect(hashCode1).equal(hashCode2);
+    done();
+  });
+
+  it("Providing different strings should give different hashCodes", (done) => {
+    const hashCode1 = generateUniqueCode("SampleString1");
+    const hashCode2 = generateUniqueCode("SampleString2");
+    expect(hashCode1).not.equal(hashCode2);
+    done();
   });
 });

@@ -12,6 +12,7 @@ const verifyToken = (req, res, next) => {
         req.verified = false;
         req.msg = "invalid JWT token";
         next();
+        return;
       }
       req.id = decode.id;
       req.verified = true;

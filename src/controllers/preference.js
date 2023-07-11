@@ -43,11 +43,13 @@ const updatePreference = (req, res) => {
     }
     return user;
   });
-  const writePath = path.join(__dirname, "..", "usersData.json");
-  fs.writeFileSync(writePath, JSON.stringify(updatedUserData), {
-    encoding: "utf-8",
-    flag: "w",
-  });
+  if (process.env.NODE_ENV != "test") {
+    const writePath = path.join(__dirname, "..", "usersData.json");
+    fs.writeFileSync(writePath, JSON.stringify(updatedUserData), {
+      encoding: "utf-8",
+      flag: "w",
+    });
+  }
 
   res.status(200).send(msg);
 };

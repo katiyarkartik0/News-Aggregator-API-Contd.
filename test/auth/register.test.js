@@ -14,7 +14,6 @@ describe("verification of register calls to server", () => {
       .post("/register")
       .send(signUpBody)
       .end((err, res) => {
-        // console.log(res)
         expect(res.status).equal(200);
         expect(res.text).equal("user created successfully");
         done();

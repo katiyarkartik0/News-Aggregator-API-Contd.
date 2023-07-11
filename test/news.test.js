@@ -86,4 +86,38 @@ describe("tests for /news route to the server", () => {
         );
       });
   });
+
+  it("Successfully Gets the read news data for path /news/read", (done) => {
+    chai
+      .request(server)
+      .get("/news/read")
+      .set("authorization", `JWT ${jwtToken}`)
+      .end((err, res) => {
+        expect(res.status).equal(200);
+        done();
+      });
+  });
+
+  it("Successfully Gets the favorite news data for path /news/favorites", (done) => {
+    chai
+      .request(server)
+      .get("/news/favorites")
+      .set("authorization", `JWT ${jwtToken}`)
+      .end((err, res) => {
+        expect(res.status).equal(200);
+        done();
+      });
+  });
+
+  it("Successfully Gets the news articles data as per the keyword for path /news/search//:keyword", (done) => {
+    let keyWord = "health";
+    chai
+      .request(server)
+      .get(`/news/search/${keyWord}`)
+      .set("authorization", `JWT ${jwtToken}`)
+      .end((err, res) => {
+        expect(res.status).equal(200);
+        done();
+      });
+  });
 });

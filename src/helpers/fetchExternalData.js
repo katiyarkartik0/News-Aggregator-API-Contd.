@@ -86,4 +86,4 @@ const fetchNews = async (userId) => {
   }
 };
 
-module.exports = { fetchNews };
+module.exports = { fetchNews,generateUniqueCode };
